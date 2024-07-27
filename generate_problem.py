@@ -1,6 +1,5 @@
 from sage.all import *
 set_random_seed(0)
-FLAG = b"crypto{??????????????????????????}"
 
 # Base field
 ea = 37
@@ -16,6 +15,7 @@ Fp = GF(p)
 g = Fp.multiplicative_generator()
 
 r = Fp(-1)
+assert not r.is_square()
 s = (p**2-1)//2
 
 print(f'Set modulus to {p}')
